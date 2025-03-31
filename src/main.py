@@ -85,15 +85,15 @@ def multiprocess(chunk: str, clip: Clip):
     tmpSrtFilePath = os.path.splitext(tmpFilePath)[0] + ".srt"
 
     if not s3_client.download_file(key, tmpFilePath):
-        return False
+        raise Exception()
 
     if not generate_subtitle_assemblyAI(tmpFilePath, tmpSrtFilePath):
-        return False
+        raise Exception()
 
     key = f"{clip.userId}/{clip.id}/subtitles/{os.path.basename(tmpSrtFilePath)}"
 
     if not s3_client.upload_file(tmpSrtFilePath, key):
-        return False
+        raise Exception()
 
     return os.path.basename(tmpSrtFilePath)
 

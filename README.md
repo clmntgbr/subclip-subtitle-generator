@@ -1,10 +1,11 @@
-# subclip-sound-extractor
+# subclip-subtitle-generator
 
 ## Description
 
-`subclip-sound-extractor` is a microservice designed to extract the audio from a video. It supports various video formats and generates a separate audio file as output, making it easier to process and analyze audio tracks independently of the video.
+`subclip-subtitle-generator` is a microservice designed to generate subtitles from a video. It analyzes the video's audio content and then creates precise subtitles based on dialogue and sound events, with customization options.
 
 ## Features
 
-- **Audio extraction**: Extracts audio from a video in various formats (MP4, AVI, MKV, etc.).
-- **Multiple audio format support**: Generates audio files in WAV format, split into manageable parts.
+- **Automatic subtitle generation**: Analyzes the video and creates subtitles based on speech and sound events.
+- **Multi-language support**: Generates subtitles in various languages.
+- **Customization**: Allows subtitle customization (timing, duration, text).
